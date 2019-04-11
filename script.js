@@ -13,6 +13,7 @@ function getCourses(timestamp)
     }
     return courses;
 }
+
 var now=new Date(Date.now());
 var midnight=new Date(now.getFullYear(), now.getMonth(), now.getDate(),0,0,0,0);
 var displayDate=midnight.getTime();
