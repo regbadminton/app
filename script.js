@@ -50,4 +50,4 @@ else if(courses.length==1) main+='Barcode '+courses[0].Barcode+nl+'Barcodes for 
 else if (courses.length==0) main+='No barcodes found.';
 
 document.getElementsByTagName("main")[0].innerHTML=main;
-document.getElementsByTagName("footer")[0].innerHTML='Current time:'+nl+now.toString().split(" GMT")[0];
+document.getElementsByTagName("footer")[0].innerHTML='Last Updated:'+nl+now.toString().split(" GMT")[0];
