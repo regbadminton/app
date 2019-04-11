@@ -45,9 +45,9 @@ switch (weekday)
 var courseDate=new Date(midnightTs);
 var main='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+courseDate.getDate()+' '+courseDate.getFullYear()+':'+nl;
 
-if (courses.length==2) main+='Slot A: '+courses[0].Barcode+nl+'Slot B: '+courses[1].Barcode;
-else if (courses.length==1) main+='Barcode '+courses[0].Barcode+nl+'Barcodes for Sunday will be shown after 6pm on Saturday';
+if (courses.length==2) main+='Slot A: '+createControls(courses[0].Barcode)+nl+'Slot B: '+createControls(courses[1].Barcode);
+else if (courses.length==1) main+='Barcode '+createControls(courses[0].Barcode)+nl+'Barcodes for Sunday will be shown after 6pm on Saturday';
 else if (courses.length==0) main+='No barcodes found.';
 
 document.getElementsByTagName("main")[0].innerHTML=main;
-document.getElementsByTagName("footer")[0].innerHTML='Last Updated:'+nl+now.toLocaleString(locale, localeOptions)+nl+webregAnchor;
+document.getElementsByTagName("footer")[0].innerHTML='Last Updated:'+nl+now.toLocaleString(locale, localeOptions);
