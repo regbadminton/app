@@ -55,7 +55,10 @@ else if(courses.length==1)
     h5='For '+dateString+':<br/>Barcode '+courses[0].Barcode+'<br/>Barcodes for Sunday will be shown after 6pm on Saturday';
 else h5='For '+dateString+':<br/>No courses found.';
 
-document.getElementsByTagName("h5")[0].innerHTML=h5;
+var h5tag=document.getElementsByTagName("h5")[0];
+h5tag.style.margin='3%';
+h5tag.style.fontWeight='normal';
+h5tag.innerHTML=h5;
 
 
 //---------------------------------FUNCTIONS-------------------------------------
