@@ -11,17 +11,17 @@ font-size: 0.9rem
 .fade {
 animation-name: fade;
 animation-iteration-count: 1;
-animation-duration: 4s; 
+animation-duration: 3s; 
 }
 
 @keyframes fade{
     0%{
     opacity: 0;
     }
-    25%{
+    33%{
     opacity: 1;
     }
-    75%{
+    67%{
     opacity: 1;
     }
     100%{
