@@ -18,7 +18,7 @@ function getCourses(timestamp) {
 function createControls(value)
 {
     var controls='<a onclick="copyValue('+value+');" href="https://webreg.surrey.ca/WebReg/Activities/ActivitiesAdvSearch.asp" target="_blank">'+value+'</a> ';
-    controls+='<button value="'+value+'" onclick="copyValue('+value+');" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
+    controls+='<button onclick="copyValue('+value+');" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
     controls+='<span id="c'+value+'"></span>';
     return controls;
 }
