@@ -35,8 +35,14 @@ switch (weekday)
     break;
 
     case 6://Saturday
-        if (now.getTime<midnightTs+EIGHTEEN_HOURS) courses=getCourses(midnightTs);
-        else {midnightTs=midnightTs+ONE_DAY; courses=getCourses(midnightTs);}
+        if (now.getTime()<midnightTs+EIGHTEEN_HOURS){
+            courses=getCourses(midnightTs);
+            document.getElementsByTagName('aside')[0].innerHTML='Barcodes for Sunday will be shown after 6pm on Saturday';
+        }
+        else {
+            midnightTs=midnightTs+ONE_DAY;
+            courses=getCourses(midnightTs);
+        }
     break;
 
     default: break;
@@ -47,8 +53,7 @@ var main='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+
 
 if (courses.length==2) main+='Slot A: '+createControls(courses[0].Barcode)+nl+'Slot B: '+createControls(courses[1].Barcode);
 else if (courses.length==1) {
-    main+='Barcode: '+createControls(courses[0].Barcode)+nl;
-    document.getElementsByTagName('aside')[0].innerHTML='Barcodes for Sunday will be shown after 6pm on Saturday';
+    main+='Barcode: '+createControls(courses[0].Barcode);
 }
 else if (courses.length==0) main+='No barcodes found.';
 
