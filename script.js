@@ -49,13 +49,13 @@ switch (weekday)
 }
 
 var courseDate=new Date(midnightTs);
-var main='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+courseDate.getDate()+' '+courseDate.getFullYear()+':'+nl;
+var form='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+courseDate.getDate()+' '+courseDate.getFullYear()+':'+nl;
 
-if (courses.length==2) main+='Slot A: '+createControls(courses[0].Barcode)+nl+'Slot B: '+createControls(courses[1].Barcode);
+if (courses.length==2) form+='Slot A:'+createControls(courses[0].Barcode)+nl+'Slot B:'+createControls(courses[1].Barcode);
 else if (courses.length==1) {
-    main+='Barcode: '+createControls(courses[0].Barcode);
+    form+='Barcode:'+createControls(courses[0].Barcode);
 }
-else if (courses.length==0) main+='No barcodes found.';
+else if (courses.length==0) form+='No barcodes found.';
 
-document.getElementsByTagName("main")[0].innerHTML=main;
+document.getElementsByTagName("form")[0].innerHTML=form;
 document.getElementsByTagName("footer")[0].innerHTML='Last Updated:'+nl+now.toLocaleString(locale, localeOptions);
