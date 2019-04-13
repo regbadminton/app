@@ -17,7 +17,7 @@ function getCourses(timestamp) {
 
 function createControls(value)
 {
-    var controls='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'">'+value+'</button>';
+    var controls='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
     controls+='<button type="button" onclick="copyValue('+value+');" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
     controls+='<span id="c'+value+'"></span>';
     return controls;
