@@ -1,7 +1,7 @@
 var days=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var localeOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', minute: 'numeric', hour12: true  };
-var locale='en-us';
+var LOCALE='en-us';
 var nl='<br>';
 var ONE_DAY=86400000;
 var EIGHTEEN_HOURS=64800000;
@@ -17,7 +17,7 @@ function getCourses(timestamp) {
 
 function createControls(value)
 {
-    var controls='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
+    var controls='<button type="button" onclick="submitForm()" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
     controls+='<button type="button" onclick="copyValue('+value+');" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
     controls+='<span id="c'+value+'"></span>';
     return controls;
@@ -32,4 +32,11 @@ function copyValue(value)
     tmp.select();
     document.execCommand('copy');
     tmp.remove();
+}
+
+function submitForm()
+{
+    window.focus();
+    form=document.getElementsByTagName("form")[0].submit();
+    window.focus();
 }
