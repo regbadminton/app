@@ -15,12 +15,12 @@ function getCourses(timestamp) {
     return courses;
 }
 
-function createControls(value)
+function createButtons(value)
 {
-    var controls='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
-    controls+='<button type="button" onclick="copyValue('+value+')" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
-    controls+='<span id="c'+value+'"></span>';
-    return controls;
+    var buttons='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
+    buttons+='<button type="button" onclick="copyValue('+value+')" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
+    buttons+='<span id="c'+value+'"></span>';
+    return buttons;
 }
 
 function copyValue(value)
@@ -32,11 +32,4 @@ function copyValue(value)
     tmp.select();
     document.execCommand('copy');
     tmp.remove();
-}
-
-function submitForm()
-{
-    window.focus();
-    form=document.getElementsByTagName("form")[0].submit();
-    window.focus();
 }

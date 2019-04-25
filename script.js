@@ -50,8 +50,8 @@ switch (midnight.getDay())
 var courseDate=new Date(midnightTs);
 var form='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+courseDate.getDate()+' '+courseDate.getFullYear()+':'+nl;
 
-if (courses.length==2) form+='Slot A:'+createControls(courses[0].Barcode)+nl+'Slot B:'+createControls(courses[1].Barcode);
-else if (courses.length==1) form+='Barcode:'+createControls(courses[0].Barcode);
+if (courses.length==2) form+='Slot A:'+createButtons(courses[0].Barcode)+nl+'Slot B:'+createButtons(courses[1].Barcode);
+else if (courses.length==1) form+='Barcode:'+createButtons(courses[0].Barcode);
 else if (courses.length==0) form+='No barcodes found.';
 
 document.getElementsByTagName("form")[0].innerHTML=form;
