@@ -19,7 +19,7 @@ function createButtons(value)
 {
     var buttons='<button type="submit" class="btn btn-link" name="cbarcode" value="'+value+'" style="padding: 0px .75rem">'+value+'</button>';
     buttons+='<button type="button" onclick="copyValue('+value+')" class="btn btn-light btn-sm" style="padding: 0px 0.5rem; background-color: #eaedf0; border-color: #cfd8dc;">Copy Barcode</button>';
-    buttons+='<span id="c'+value+'"></span>';
+    buttons+='<span id="c'+value+'"> <span class="badge badge-pill badge-success invisible">Copied!</span></span>';
     return buttons;
 }
 
