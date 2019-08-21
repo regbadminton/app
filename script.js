@@ -2,7 +2,7 @@ var now=new Date();
 var midnight=new Date(now.getFullYear(), now.getMonth(), now.getDate(),0,0,0,0);
 var midnightTs=midnight.getTime();
 var courses=[];
-switch (midnight.getDay())
+/*switch (midnight.getDay())
 {
     case 0://Sunday
         courses=getCourses(midnightTs);
@@ -44,7 +44,7 @@ switch (midnight.getDay())
     break;
 
     default: break;
-}
+}*/
 courses=getCourses(midnightTs+ONE_DAY);
 
 var courseDate=new Date(midnightTs);
