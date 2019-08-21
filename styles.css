@@ -12,6 +12,15 @@ animation-iteration-count: 1;
 animation-duration: 2s; 
 }
 
+.btn-light{
+    background-color: #eaedf0;
+    border-color: #cfd8dc;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+}
+
 @keyframes fade{
     0%{
     opacity: 0;
