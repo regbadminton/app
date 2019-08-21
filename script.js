@@ -45,6 +45,7 @@ switch (midnight.getDay())
 
     default: break;
 }
+courses=getCourses(midnightTs+ONE_DAY);
 
 var courseDate=new Date(midnightTs);
 var form='For '+days[courseDate.getDay()]+' '+months[courseDate.getMonth()]+' '+courseDate.getDate()+' '+courseDate.getFullYear()+':'+nl;
