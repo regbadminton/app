@@ -1,6 +1,6 @@
-var localeOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', minute: 'numeric', hour12: true  };
-var DATE_FORMAT = { year: 'numeric', month: 'numeric', day: 'numeric' };
-var LOCALE='en-us';
+const localeOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',hour: 'numeric', minute: 'numeric', hour12: true  };
+const DATE_FORMAT = { year: 'numeric', month: 'numeric', day: 'numeric' };
+const LOCALE='en-us';
 
 displayButton=(button,course,i)=>{
     button.href=course.getURL();
