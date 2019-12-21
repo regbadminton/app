@@ -1,5 +1,4 @@
 let tomorrow=new Date();
-let response;
 let courses=[];
 const button1=document.querySelector('a');
 
