@@ -8,7 +8,6 @@ const button1=document.querySelector('a');
 let courses=[];
 tomorrow.setDate(tomorrow.getDate()+1);
 let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((holder,value)=>holder+=value);
-strTomorrow='2'
 
 fetch('https://regbadminton.com/api/?d='+strTomorrow).catch(error=>console.error(error))
     .then(response=>response.json()).then(json=>{
