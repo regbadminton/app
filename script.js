@@ -5,11 +5,11 @@ const LOCALE='en-us';
 const tomorrow=new Date();
 const button1=document.querySelector('a');
 
-let courses=[];
-tomorrow.setDate(tomorrow.getDate()+1);
-let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((holder,value)=>holder+=value);
+window.addEventListener('load',async()=>{
+    let courses=[];
+    tomorrow.setDate(tomorrow.getDate()+1);
+    let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((holder,value)=>holder+=value);
 
-(async()=>{
     courses=(await(await fetch('https://regbadminton.com/api/?d='+strTomorrow)).json()).map(obj=>new Course(obj));
     switch (courses.length) {
         case 2:
@@ -38,7 +38,7 @@ let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((
     document.querySelector("footer span").innerHTML=new Date().toLocaleString(LOCALE,UPDATED_FORMAT);
     document.querySelector('footer a').href='https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4BookingPages/Classes?calendarId=ec6defcd-4317-4bf3-a72e-a9c6b4e5c897&widgetId=15f6af07-39c5-473e-b053-96653f77a406&embed=False';
     document.querySelector('footer').classList.remove('d-none');
-})();
+})
 
 class Course{
     constructor(obj){
