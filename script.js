@@ -4,7 +4,7 @@ const UPDATED_FORMAT = { weekday: 'short', year: 'numeric', month: 'short', day:
 const LOCALE='en-us';
 const tomorrow=new Date();
 const button1=document.querySelector('a');
-
+X;
 let courses=[];
 tomorrow.setDate(tomorrow.getDate()+1);
 let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((holder,value)=>holder+=value);
