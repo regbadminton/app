@@ -9,7 +9,7 @@ let courses=[];
 tomorrow.setDate(tomorrow.getDate()+1);
 let strTomorrow=tomorrow.toLocaleString('ja-JP',DATE_FORMAT).split('/').reduce((holder,value)=>holder+=value);
 
-(async function(){
+(async()=>{
     courses=(await(await fetch('https://regbadminton.com/api/?d='+strTomorrow)).json()).map(obj=>new Course(obj));
     switch (courses.length) {
         case 2:
