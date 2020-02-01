@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
-    <link rel="manifest" href="ico/site.webmanifest">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://regbadminton.com/inc/styles.css">
@@ -20,10 +20,16 @@
 <body>
     <div class="container-fluid d-flex justify-content-center mt-5 pt-5 mt-sm-0 pt-sm-0">
         <div class="d-flex flex-column align-start mt-5 pt-4 pt-sm-2 mt-sm-0">
-            <main class="mb-2 mt-5"><a class="d-none btn btn-light px-5 mt-3 ml-5" target="_blank"></a></main>
+            <main class="mb-2 mt-5">
+                <div class="spinner-border mt-5" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                <a class="d-none btn btn-light px-5 mt-3 ml-5"></a>
+            </main>
             <footer class="mt-2 d-none">
                 <div class="mb-2">Last Updated:<br><span></span></div>
-                <a target="_blank" href="">Search Drop-In Sports</a>
+                <a id="login" target="_blank">MySurrey Login</a> |
+                <a id="search" target="_blank">Search Drop-In Sports</a>
             </footer>
         </div>
     </div>
