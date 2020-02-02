@@ -1,0 +1,12 @@
+main {
+  font-size: 1.25rem;
+}   
+    
+footer {
+  font-size: 0.9rem
+}
+    
+.btn-light{
+  background-color: #eaedf0;
+  border-color: #cfd8dc;
+}
