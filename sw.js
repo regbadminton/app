@@ -1,4 +1,4 @@
-const cacheName ='regBadminton';
+const cacheName = 'regBadminton';
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
     caches.open(cacheName).then(cache => {

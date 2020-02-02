@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator)
   navigator.serviceWorker.register('/sw.js')
-  .then(reg =>alert("Service Worker Registered",reg))
+  .then(reg => alert("Service Worker Registered",reg))
   .catch(err => alert(err));
 
 const DATE_FOMRAT = { weekday:'long',year:'numeric',month:'long',day:'numeric' } ;
