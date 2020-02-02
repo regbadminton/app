@@ -1,7 +1,7 @@
 if ('serviceWorker' in navigator)
   navigator.serviceWorker.register('/reg/sw.js')
-  .then(reg => alert("Service Worker Registered",reg))
-  .catch(err => alert(err));
+  .then(reg => console.log("Service Worker Registered",reg))
+  .catch(err => console.warn(err));
 
 const DATE_FOMRAT = { weekday:'long',year:'numeric',month:'long',day:'numeric' } ;
 const UPDATED_FORMAT = { weekday:'short',year:'numeric',month:'short',day:'numeric',
