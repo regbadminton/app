@@ -1,8 +1,3 @@
-if ('serviceWorker' in navigator)
-  navigator.serviceWorker.register('/app/sw.js')
-  .then(reg => console.log("Service Worker Registered",reg))
-  .catch(err => console.warn(err));
-
 const DATE_FOMRAT = { weekday:'long',year:'numeric',month:'long',day:'numeric' } ;
 const UPDATED_FORMAT = { weekday:'short',year:'numeric',month:'short',day:'numeric',
                          hour:'numeric',minute:'numeric',hour12:true };
@@ -27,7 +22,7 @@ const toggleVisibility =()=> {
 const fetchCourses =async()=> {
   toggleVisibility();
   let dates = { today: new Date(), tomorrow: new Date() };
-  dates.tomorrow.setDate(dates.tomorrow.getDate() + 1);
+  dates.tomorrow.setDate(dates.today.getDate() + 1);
   let date = document.querySelector("input[name=dateSelect]:checked").value;
   
   document.querySelector('#date span').innerHTML = dates[date].toLocaleString('en-us', DATE_FOMRAT);
@@ -37,11 +32,9 @@ const fetchCourses =async()=> {
   switch (courses.length) {
     case 2:
       courses[1].createButton();
-      buttons[1].classList.remove('d-none');
       buttons[0].className = 'ml-sm-3 mr-sm-2 mx-lg-0 btn btn-light d-none mb-3 col-sm-5 col-lg-12';
     case 1:
       courses[0].createButton();
-      buttons[0].classList.remove('d-none');
     break;
   
     default:
@@ -54,7 +47,6 @@ const fetchCourses =async()=> {
 addEventListener('load',fetchCourses);
 document.querySelectorAll('[name=dateSelect]').forEach(radio => radio.addEventListener('change', fetchCourses));
 
-
 class Course{
 
   constructor(obj){
@@ -65,6 +57,7 @@ class Course{
   }
 
   createButton(){
+    buttons[this.session - 1].classList.remove('d-none');
     buttons[this.session - 1].href = `https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4EventParticipants`+
                     `?eventId=${this.classID}`+
                     `&occurrenceDate=${this.date}`+
@@ -73,3 +66,8 @@ class Course{
                     `&waitListMode=False`;
   }
 }
+
+if ('serviceWorker' in navigator)
+  navigator.serviceWorker.register('/app/sw.js')
+  .then(reg => console.log("Service Worker Registered",reg))
+  .catch(err => console.warn(err));
