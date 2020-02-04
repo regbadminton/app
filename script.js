@@ -64,7 +64,7 @@ class Course{
       this.session = obj.session;
   }
 
-  createButton = ()=> {
+  createButton(){
     buttons[this.session - 1].href = `https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4EventParticipants`+
                     `?eventId=${this.classID}`+
                     `&occurrenceDate=${this.date}`+
