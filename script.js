@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator)
-  navigator.serviceWorker.register('/reg/sw.js')
+  navigator.serviceWorker.register('/app/sw.js')
   .then(reg => console.log("Service Worker Registered",reg))
   .catch(err => console.warn(err));
 
