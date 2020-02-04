@@ -1,4 +1,4 @@
-main {
+.large {
   font-size: 1.25rem;
 }   
     
@@ -9,4 +9,9 @@ footer {
 .btn-light{
   background-color: #eaedf0;
   border-color: #cfd8dc;
+}
+
+select.form-control{
+  display: inline;
+  width: auto;
 }

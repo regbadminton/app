@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Badminton Registration</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
-    <link rel=" apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+  <title>Badminton Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+  <link rel=" apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container-fluid d-flex justify-content-center mt-5 pt-5 mt-sm-0 pt-sm-0">
-        <div class="d-flex flex-column align-start mt-5 pt-4 pt-sm-2 mt-sm-0">
-            <main class="mb-2 mt-5">
-                <div class="spinner-border mt-5" style="width: 3rem; height: 3rem;" role="status">
-                    <span class="sr-only">Loading...</span>
-                  </div>
-                <a class="d-none btn btn-light px-5 mt-3 ml-5"></a>
-            </main>
-            <footer class="mt-2 d-none">
-                <div class="mb-2">Last Updated:<br><span></span></div>
-                <a id="login" target="_blank">MySurrey Login</a> |
-                <a id="search" target="_blank">Search Drop-In Sports</a>
-            </footer>
+  <div class="container-fluid d-flex justify-content-center mt-5 pt-5 pt-sm-0 pt-lg-5 ">
+    <div class="d-flex flex-column align-start mt-5 pt-5 pt-sm-2 mt-sm-0 mt-lg-0 pt-lg-5">
+      <header class="mt-2 mt-sm-0 mt-lg-4">
+        <div class="form-check form-check-inline">
+          <span class="mr-2">Select Date:</span>
+          <input class="form-check-input" type="radio" name="dateSelect" id="today" value="today">
+          <label class="form-check-label" for="today">Today</label>
         </div>
+        <div class="form-check form-check-inline">
+          <span class="invisible">|</span>
+          <input class="form-check-input" type="radio" name="dateSelect" id="tomorrow" value="tomorrow" checked>
+          <label class="form-check-label" for="tomorrow">Tomorrow</label>
+        </div>
+        <div id="date" class="large mt-3">For <span></span></div>
+      </header>
+      <div class="spinner-border mt-5 d-none" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <main class="large container pt-4 pb-1 px-0">
+        <div id="row" class="">
+          <a href="" class="btn btn-light d-none mb-3 col-12">Session 1</a>
+          <a href="" class="btn btn-light d-none mb-3 col-sm-5 col-lg-12">Session 2</a>
+        </div>
+        <div id="row">
+          <div id="none" class="d-none col-12 mb-3 ml-4">No sessions found.</div>
+        </div>
+      </main>
+      <footer class="">
+        <div class="mb-2">Last Updated:<br><span id="updated"></span></div>
+        <a id="login" target="_blank">MySurrey Login</a> |
+        <a id="search" target="_blank">Search Drop-In Sports</a>
+      </footer>
     </div>
+  </div>
 </body>
 </html>

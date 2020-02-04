@@ -1,6 +1,6 @@
 {
     "name": "Badminton Registration",
-    "short_name": "RegBadminton",
+    "short_name": "Badminton Registration",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
