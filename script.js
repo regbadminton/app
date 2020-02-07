@@ -1,8 +1,3 @@
-const DATE_FOMRAT = { weekday:'long',year:'numeric',month:'long',day:'numeric' } ;
-const UPDATED_FORMAT = { weekday:'short',year:'numeric',month:'short',day:'numeric',
-                         hour:'numeric',minute:'numeric',hour12:true };
-
-
 const searchDomain = 'https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4BookingPages/Classes';
 document.querySelector('footer #login').href += 'https://cityofsurrey.perfectmind.com/23615/Menu/Contact';
 document.querySelector('footer #search').href = searchDomain +

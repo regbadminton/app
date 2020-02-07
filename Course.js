@@ -17,17 +17,22 @@ class Course{
                       `&waitListMode=False`;
     }
   
-    static async fetchCourses(){
+    static async fetchCourses() {
+      document.querySelectorAll('header, main, footer').forEach(element => element.classList.add('invisible'));
+      document.querySelectorAll('main #row > *').forEach(element => element.classList.add('d-none'));
       const spinner = document.querySelector('.spinner-border');
       spinner.classList.remove('d-none');
-      document.querySelectorAll('main #row > *, header, footer').forEach(element => element.classList.add('d-none'));
       
       let dates = { today: new Date(), tomorrow: new Date() };
       dates.tomorrow.setDate(dates.today.getDate() + 1);
       let date = document.querySelector("input[name=dateSelect]:checked").value;
       
-      document.querySelector('#date span').innerHTML = dates[date].toLocaleString('en-us', DATE_FOMRAT);
-      document.querySelector('#updated').innerHTML = dates.today.toLocaleString('en-us', UPDATED_FORMAT);
+      document.querySelector('#date span').innerHTML = dates[date].toLocaleString(
+        'en-us', { weekday:'long',year:'numeric',month:'long',day:'numeric' });
+        
+      document.querySelector('#updated').innerHTML = dates.today.toLocaleString(
+        'en-us', { weekday:'short',year:'numeric',month:'short',day:'numeric',
+        hour:'numeric',minute:'numeric',hour12:true });
   
       let courses = (await(await fetch('https://regbadminton.com/api/?d='+ date)).json()).map(obj => new Course(obj));
       switch (courses.length) {
@@ -43,6 +48,6 @@ class Course{
         break;
       }
       spinner.classList.add('d-none');
-      document.querySelectorAll('header, footer').forEach(element => element.classList.remove('d-none'));
+      document.querySelectorAll('header, main, footer').forEach(element => element.classList.remove('invisible'));
     }
   }
