@@ -9,11 +9,11 @@ class Course{
   
     createButton(){
       this.button.classList.remove('d-none');
-      this.button.href = `https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4EventParticipants`+
-                      `?eventId=${this.classID}`+
-                      `&occurrenceDate=${this.date}`+
-                      `&widgetId=15f6af07-39c5-473e-b053-96653f77a406`+
-                      `&locationId=${this.locationID}`+
+      this.button.href = `https://cityofsurrey.perfectmind.com/23615/Menu/BookMe4EventParticipants` +
+                      `?eventId=${this.classID}` +
+                      `&occurrenceDate=${this.date}` +
+                      `&widgetId=15f6af07-39c5-473e-b053-96653f77a406` +
+                      `&locationId=${this.locationID}` +
                       `&waitListMode=False`;
     }
   
