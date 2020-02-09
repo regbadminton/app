@@ -18,14 +18,17 @@ class Course{
     }
   
     static async fetchCourses() {
-      document.querySelectorAll('header, main, footer').forEach(element => element.classList.add('invisible'));
+      const mainElements = document.querySelectorAll('header, main, footer');
+      mainElements.forEach(element => element.classList.add('invisible'));
       document.querySelectorAll('main #row > *').forEach(element => element.classList.add('d-none'));
+
       const spinner = document.querySelector('.spinner-border');
       spinner.classList.remove('d-none');
       
-      let dates = { today: new Date(), tomorrow: new Date() };
+      const dates = { today: new Date(), tomorrow: new Date() };
       dates.tomorrow.setDate(dates.today.getDate() + 1);
-      let date = document.querySelector("input[name=dateSelect]:checked").value;
+      
+      const date = document.querySelector("input[name=dateSelect]:checked").value;
       
       document.querySelector('#date span').innerHTML = dates[date].toLocaleString(
         'en-us', { weekday:'long',year:'numeric',month:'long',day:'numeric' });
@@ -34,7 +37,7 @@ class Course{
         'en-us', { weekday:'short',year:'numeric',month:'short',day:'numeric',
         hour:'numeric',minute:'numeric',hour12:true });
   
-      let courses = (await(await fetch('https://regbadminton.com/api/?d='+ date)).json()).map(obj => new Course(obj));
+      const courses = (await(await fetch('https://regbadminton.com/api/?d='+ date)).json()).map(obj => new Course(obj));
       switch (courses.length) {
         case 2:
           courses[1].createButton();
@@ -48,6 +51,6 @@ class Course{
         break;
       }
       spinner.classList.add('d-none');
-      document.querySelectorAll('header, main, footer').forEach(element => element.classList.remove('invisible'));
+      mainElements.forEach(element => element.classList.remove('invisible'));
     }
   }
