@@ -29,7 +29,7 @@ self.addEventListener('push', event => {
   const title = notification.title;
   console.log('Title: ',notification.title);
   console.log('Options: ',notification.options);
-  const options = JSON.parse(notification.options);
+  const options = notification.options;
 
   event.waitUntil(self.registration.showNotification(title, options))
 })
