@@ -4,6 +4,10 @@ self.addEventListener('push', event => {
   console.log('Payload: ',payload);
 
   self.pushUrl = payload.url;
+  console.log('payload url: ',payload.url);
+  console.log('push url: ', self.pushUrl);
+  
+  
 
   const title = payload.title;
   const options = payload.options;
