@@ -24,6 +24,7 @@ if ('serviceWorker' in navigator)( async()=> {
   console.log('Sending...');
   await fetch("https://regbadminton.com/push/", {
     method: "POST",
+    accept: '"Accept": "application/json, text/plain, */*"',
     body: JSON.stringify(subscription),
     headers: { "content-type": "application/json" }
   });
