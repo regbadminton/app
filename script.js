@@ -8,7 +8,25 @@ document.querySelector('footer #search').href = 'https://cityofsurrey.perfectmin
 addEventListener('load', Course.fetchCourses);
 document.querySelectorAll('[name=dateSelect]').forEach(radio => radio.addEventListener('change', Course.fetchCourses));
 
-if ('serviceWorker' in navigator)
-  navigator.serviceWorker.register('/app/sw.js')
-  .then(reg => console.log("Service Worker Registered",reg))
-  .catch(err => console.warn(err));
+if ('serviceWorker' in navigator)( async()=> {
+  console.log('Registering Service Worker...');
+  const swReg = await navigator.serviceWorker.register('/app/sw.js');//NOT DEBUG
+  // const swReg = await navigator.serviceWorker.register('/sw.js');//DEBUG
+  console.log('Service Worker Registered...', swReg);
+  
+  console.log('Subscribing...');
+  const subscription = await swReg.pushManager.subscribe({ 
+    userVisibleOnly: true,
+    applicationServerKey:'BDeetZQiM4kcemNhlUzxQq4MpX-zzVL9pWUbyQNMWjlLASgYFodiKZugM-tRef8NMmHHA_3l-o4Bnx49MQkd8iQ'
+  });
+  console.log('Subscribed...', JSON.stringify(subscription));
+
+  console.log('Sending...');
+  await fetch("https://regbadminton.com/push/", {
+    method: "POST",
+    body: JSON.stringify(subscription),
+    headers: { "content-type": "application/json" }
+  });
+  console.log('Sent.');
+  
+})().catch(err => console.warn(err));
